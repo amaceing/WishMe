@@ -1,4 +1,4 @@
-angular.module('listsApp', ['ngMaterial']).controller('ListsController', function() {
+angular.module('listsApp', ['ngMaterial']).controller('ListsController', function($scope, $mdDialog) {
 
     var wishList = this;
 
@@ -33,6 +33,26 @@ angular.module('listsApp', ['ngMaterial']).controller('ListsController', functio
       {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
       {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
     ];
+
+    $scope.showAlert = function(ev) {
+      var alert = $mdDialog.alert({
+        title: "Let's create a Wish List!",
+        content: 'This is an example of how easy dialogs can be!',
+        ok: 'Create!'
+      });
+      $mdDialog.show(alert);
+      // $mdDialog.show(
+      //   $mdDialog.alert()
+      //     .parent(angular.element(document.querySelector('#popupContainer')))
+      //     .clickOutsideToClose(true)
+      //     .title('This is an alert title')
+      //     .textContent('You can specify some description text in here.')
+      //     .ariaLabel('Alert Dialog Demo')
+      //     .ok('Got it!')
+      //     .targetEvent(ev)
+      // );
+    };
+
     // var todoList = this;
     // todoList.todos = [
     //   {text:'learn angular', done:true},

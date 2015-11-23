@@ -26,8 +26,8 @@
 			<div class="container-fluid">
 				<md-list>
 			    	<md-list-item class="md-3-line md-no-proxy ng-scope" ng-repeat="list in wishList.wishLists">
-			    		<h2 style="padding-right: 10px;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
-			    		<h2 style="padding-right: 10px;" ng-if="list.type == 'Birthday'"><i class="fa fa-birthday-cake"></i></h2>
+			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
+			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Birthday'"><i class="fa fa-birthday-cake"></i></h2>
 			        	<div class="md-list-item-text">
 			          		<h3>{{list.name}}</h3>
 			          		<p>Created: {{list.dateCreated}} Modified: {{list.dateModified}}</p>
@@ -39,13 +39,15 @@
 		</div>
 		<div class="footer">
 				<div class="col-md-4">
+					<span id="left"></span>
 				</div>	
 				<div class="col-md-4 actions">
 					<md-button class="md-icon-button md-button md-ink-ripple plus"><i class="fa fa-power-off"></i></md-button>
-					<md-button class="md-icon-button md-button md-ink-ripple plus"><i class="fa fa-plus-circle"></i></md-button>
+					<md-button class="md-icon-button md-button md-ink-ripple plus" ng-click="showAlert($event)"><i class="fa fa-plus-circle"></i></md-button>
 					<md-button class="md-icon-button md-button md-ink-ripple plus"><i class="fa fa-cogs"></i></md-button>
 				</div>	
 				<div class="col-md-4">
+					<span id="right"></span>
 				</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
