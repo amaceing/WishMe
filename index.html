@@ -3,21 +3,23 @@
 	<head>
 		<title>WishMe</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="">
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
-				<ul class="nav nav-tabs">
-				  	<li class="active"><a href="#">Home</a></li>
-				  	<li><a href="#">About</a></li>
-				  	<li><a href="#">Contact</a></li>
-				  	<li><a href="#">Register</a></li>
-				</ul>
+				<h1>Here's your wish!</h1>
 		  	</div>
 		</nav>
-
+		 <ul class="nav nav-tabs nav-justified my-tabs">
+		    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+		    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+		    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+		    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+		 </ul>
 	</body>
 </html>
