@@ -1,0 +1,33 @@
+.navbar {
+	text-align: center;
+	background-color: #337AB7;
+	height: 150px;
+	position: relative;
+	border: none;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+h1 {
+	color: white;
+	font-size: 80px;
+}
+
+.tableWrapper {
+	height: 600px;
+	overflow: auto;
+}
+
+.footer {
+	display: inline-block;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	border: none;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.add {
+	color: #337AB7;
+}

@@ -1,25 +1,70 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="listsApp">
 	<head>
 		<title>WishMe</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+		<script src="listsApp.js"></script>
+		<script src="main.js"></script>
 	</head>
-	<body>
+	<body ng-controller="ListsController as wishList">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<h1>Here's your wish!</h1>
 		  	</div>
 		</nav>
-		 <ul class="nav nav-tabs nav-justified my-tabs">
-		    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-		    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-		    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-		    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-		 </ul>
+		<div class="container-fluid">
+			<ul class="nav nav-tabs nav-justified my-tabs">
+			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lists</a></li>
+			    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Profile</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+		 	</ul>
+			<div class="container-fluid">
+				<div class="tableWrapper">
+				 	<table class="table table-hover">
+					  	<thead>
+						  	<tr>
+						  		<th>{{wishList.test}}</th>
+						  		<th>{{wishList.name}}</th>
+						  		<th>{{wishList.dateCreated}}</th>
+						  		<th>{{wishList.dateModified}}</th>
+						  	</tr>
+						</thead>
+						<tr ng-repeat="list in wishList.wishLists">
+							<td>{{list.type}}</td>
+							<td>{{list.name}}</td>
+							<td>{{list.dateCreated}}</td>
+							<td>{{list.dateModified}}</td>
+				  		</tr>
+					</table>
+				</div>
+				<div class="tableWrapper">
+				 	<table class="table table-hover">
+					  	<thead>
+						  	<tr>
+						  		<th>{{wishList.test}}</th>
+						  		<th>{{wishList.name}}</th>
+						  		<th>{{wishList.dateCreated}}</th>
+						  		<th>{{wishList.dateModified}}</th>
+						  	</tr>
+						</thead>
+						<tr ng-repeat="list in wishList.wishLists">
+							<td>{{list.type}}</td>
+							<td>{{list.name}}</td>
+							<td>{{list.dateCreated}}</td>
+							<td>{{list.dateModified}}</td>
+				  		</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<ul class="nav nav-tabs nav-justified">
+			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="add fa fa-plus-square-o fa-5x"></i></li>
+		 	</ul>
+		</div>
 	</body>
 </html>
