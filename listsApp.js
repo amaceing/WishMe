@@ -34,24 +34,31 @@ angular.module('listsApp', ['ngMaterial']).controller('ListsController', functio
       {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
     ];
 
-    $scope.showAlert = function(ev) {
-      var alert = $mdDialog.alert({
+    var alert = $mdDialog.alert({
         title: "Let's create a Wish List!",
-        content: 'This is an example of how easy dialogs can be!',
-        ok: 'Create!'
+        template: '<md-content ng-controller="ListsController as wishList" flex layout-padding>' + 
+                    '<h2>Create a Wish List!</h2>' + 
+                    '<md-input-container class="md-block">' + 
+                      '<label>Wish List Name</label>' + 
+                      '<input required name="listName">' +
+                    '</md-input-container>' + 
+                    '<md-dialog-actions>' +
+                      '<md-button ng-click="closeDialog($event)" class="md-primary">' +
+                        'Create!' +
+                      '</md-button>' +
+                    '</md-dialog-actions>' + 
+                  '</md-content>',
+        clickOutsideToClose: true
       });
+
+    $scope.showAlert = function(ev) {
       $mdDialog.show(alert);
-      // $mdDialog.show(
-      //   $mdDialog.alert()
-      //     .parent(angular.element(document.querySelector('#popupContainer')))
-      //     .clickOutsideToClose(true)
-      //     .title('This is an alert title')
-      //     .textContent('You can specify some description text in here.')
-      //     .ariaLabel('Alert Dialog Demo')
-      //     .ok('Got it!')
-      //     .targetEvent(ev)
-      // );
     };
+
+    $scope.closeDialog = function(ev) {
+      console.log("test");
+      $mdDialog.hide(alert);
+    }
 
     // var todoList = this;
     // todoList.todos = [

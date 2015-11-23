@@ -34,7 +34,7 @@ li::-moz-focus-inner {
 }
 
 .actions {
-	background-color: #3F8EC4;
+	background-color: white;
 	text-align: center;
 }
 
@@ -46,6 +46,6 @@ li::-moz-focus-inner {
 
 .plus {
 	text-align: center;
-	color: white;
+	color: #3F8EC4;;
 	font-size: 65px !important;
 }
