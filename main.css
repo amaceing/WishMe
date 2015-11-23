@@ -19,9 +19,11 @@ h1 {
 }
 
 .footer {
+	background-color: #337AB7;
 	display: inline-block;
 	position: fixed;
 	bottom: 0px;
+	height: 60px;
 	width: 100%;
 	border: none;
 	padding-bottom: 0px;
