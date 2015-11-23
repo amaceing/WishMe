@@ -25,11 +25,12 @@
 		 	</ul> -->
 			<div class="container-fluid">
 				<md-list>
-			    	<md-list-item class="md-3-line" ng-repeat="list in wishList.wishLists">
+			    	<md-list-item class="md-3-line md-no-proxy ng-scope" ng-repeat="list in wishList.wishLists">
+			    		<h2 style="padding-right: 10px;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
+			    		<h2 style="padding-right: 10px;" ng-if="list.type == 'Birthday'"><i class="fa fa-birthday-cake"></i></h2>
 			        	<div class="md-list-item-text">
 			          		<h3>{{list.name}}</h3>
-			          		<h4>{{list.type}}</h4>
-			          		<p>{{list.dateCreated}} {{list.dateModified}}</p>
+			          		<p>Created: {{list.dateCreated}} Modified: {{list.dateModified}}</p>
 			        	</div>
 			        	<md-divider ng-if="!$last"></md-divider>
 			      	</md-list-item>
