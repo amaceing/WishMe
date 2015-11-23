@@ -3,6 +3,7 @@
 		<title>WishMe</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css">
 		<link rel="stylesheet" href="main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
@@ -17,52 +18,38 @@
 		  	</div>
 		</nav>
 		<div class="container-fluid">
-			<ul class="nav nav-tabs nav-justified my-tabs">
+			<!-- <ul class="nav nav-tabs nav-justified my-tabs">
 			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lists</a></li>
 			    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Profile</a></li>
 			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-		 	</ul>
+		 	</ul> -->
 			<div class="container-fluid">
-				<div class="tableWrapper">
-				 	<table class="table table-hover">
-					  	<thead>
-						  	<tr>
-						  		<th>{{wishList.test}}</th>
-						  		<th>{{wishList.name}}</th>
-						  		<th>{{wishList.dateCreated}}</th>
-						  		<th>{{wishList.dateModified}}</th>
-						  	</tr>
-						</thead>
-						<tr ng-repeat="list in wishList.wishLists">
-							<td>{{list.type}}</td>
-							<td>{{list.name}}</td>
-							<td>{{list.dateCreated}}</td>
-							<td>{{list.dateModified}}</td>
-				  		</tr>
-					</table>
-				</div>
-				<div class="tableWrapper">
-				 	<table class="table table-hover">
-					  	<thead>
-						  	<tr>
-						  		<th>{{wishList.test}}</th>
-						  		<th>{{wishList.name}}</th>
-						  		<th>{{wishList.dateCreated}}</th>
-						  		<th>{{wishList.dateModified}}</th>
-						  	</tr>
-						</thead>
-						<tr ng-repeat="list in wishList.wishLists">
-							<td>{{list.type}}</td>
-							<td>{{list.name}}</td>
-							<td>{{list.dateCreated}}</td>
-							<td>{{list.dateModified}}</td>
-				  		</tr>
-					</table>
-				</div>
+				<md-list>
+			    	<md-list-item class="md-3-line" ng-repeat="list in wishList.wishLists">
+			        	<div class="md-list-item-text">
+			          		<h3>{{list.name}}</h3>
+			          		<h4>{{list.type}}</h4>
+			          		<p>{{list.dateCreated}} {{list.dateModified}}</p>
+			        	</div>
+			        	<md-divider ng-if="!$last"></md-divider>
+			      	</md-list-item>
+			    </md-list>
 			</div>
 		</div>
 		<div class="footer">
-			<!-- use BS columns here -->
+				<div class="col-md-4">
+				</div>	
+				<div class="col-md-4 actions">
+					<md-button class="md-icon-button md-button md-ink-ripple plus"><i class="fa fa-power-off"></i></md-button>
+					<md-button class="md-icon-button md-button md-ink-ripple plus"><i class="fa fa-plus-circle"></i></md-button>
+					<md-button class="md-icon-button md-button md-ink-ripple plus"><i class="fa fa-cogs"></i></md-button>
+				</div>	
+				<div class="col-md-4">
+				</div>
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.js"></script>
 	</body>
 </html>

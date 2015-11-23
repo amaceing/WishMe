@@ -1,6 +1,6 @@
 .navbar {
 	text-align: center;
-	background-color: #337AB7;
+	background-color: #3F8EC4;
 	height: 150px;
 	position: relative;
 	border: none;
@@ -13,23 +13,39 @@ h1 {
 	font-size: 80px;
 }
 
+li::-moz-focus-inner {
+  border: 0;
+}
+
 .tableWrapper {
 	height: 600px;
 	overflow: auto;
 }
 
 .footer {
-	background-color: #337AB7;
 	display: inline-block;
 	position: fixed;
 	bottom: 0px;
-	height: 60px;
+	height: 68px;
 	width: 100%;
 	border: none;
 	padding-bottom: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 25px;
 }
 
-.add {
-	color: #337AB7;
+.actions {
+	background-color: #3F8EC4;
+	text-align: center;
+}
+
+.md-button {
+	height: 68px !important;
+	line-height: 10px !important;
+	width: 68px !important;
+}
+
+.plus {
+	text-align: center;
+	color: white;
+	font-size: 65px !important;
 }

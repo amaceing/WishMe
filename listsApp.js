@@ -1,4 +1,4 @@
-angular.module('listsApp', []).controller('ListsController', function() {
+angular.module('listsApp', ['ngMaterial']).controller('ListsController', function() {
 
     var wishList = this;
 
