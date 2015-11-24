@@ -1,49 +1,30 @@
 angular.module('listsApp', ['ngMaterial']).controller('ListsController', function($scope, $mdDialog) {
 
-    var wishList = this;
+    // var wishList = this;
+    $scope.listName = "";
+    $scope.listType;
 
-    wishList.test = "Type";
-    wishList.name = "Name";
-    wishList.dateCreated = "Date Created";
-    wishList.dateModified = "Date Modified";
-
-    wishList.wishLists = [
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
+    $scope.wishLists = [
       {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
       {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
       {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
+      {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
     ];
 
     var alert = $mdDialog.alert({
         title: "Let's create a Wish List!",
-        template: '<md-content ng-controller="ListsController as wishList" flex layout-padding>' + 
-                    '<h2>Create a Wish List!</h2>' + 
-                    '<md-input-container class="md-block">' + 
+        template: '<md-content class="createListForm" ng-controller="ListsController" flex layout-padding>' + 
+                    '<h2>Create a Wish List</h2>' + 
+                    '<md-input-container class="md-block formInput">' + 
                       '<label>Wish List Name</label>' + 
-                      '<input required name="listName">' +
+                      '<input required ng-model="listName">' +
                     '</md-input-container>' + 
+                    '<md-radio-group class="formInput" ng-model="listType">' +
+                      '<md-radio-button value="Birthday" class="md-primary">Birthday</md-radio-button>' +
+                      '<md-radio-button value="Christmas" class="md-primary">Christmas</md-radio-button>' +
+                    '</md-radio-group>' +
                     '<md-dialog-actions>' +
-                      '<md-button ng-click="closeDialog($event)" class="md-primary">' +
+                      '<md-button ng-click="addList()" class="md-primary">' +
                         'Create!' +
                       '</md-button>' +
                     '</md-dialog-actions>' + 
@@ -55,9 +36,15 @@ angular.module('listsApp', ['ngMaterial']).controller('ListsController', functio
       $mdDialog.show(alert);
     };
 
-    $scope.closeDialog = function(ev) {
+    $scope.closeDialog = function() {
       console.log("test");
       $mdDialog.hide(alert);
+    }
+
+    $scope.addList = function() {
+      $scope.$apply(function(){
+        wishLists.push({type:$scope.listType, name:$scope.listName, dateCreated: 'Test', dateModified: 'Test'});
+      });
     }
 
     // var todoList = this;

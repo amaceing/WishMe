@@ -1,3 +1,7 @@
+body {
+	color: #3F8EC4;
+}
+
 .navbar {
 	text-align: center;
 	background-color: #3F8EC4;
@@ -13,8 +17,39 @@ h1 {
 	font-size: 80px;
 }
 
-li::-moz-focus-inner {
-  border: 0;
+h2 {
+	color: #3F8EC4;
+}
+
+label {
+	color: #3F8EC4 !important; 
+	text-align: left;
+}
+
+.createListForm {
+	width: 500px;
+	text-align: center;
+}
+
+.formInput {
+	text-align: left;
+	color: #3F8EC4 !important; 
+}
+
+.md-on {
+	background-color: #3F8EC4 !important; 
+}
+
+.md-off {
+	color: #3F8EC4 !important;
+}
+
+.md-input-focused {
+	color: #3F8EC4 !important;
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: #3F8EC4 !important;
 }
 
 .tableWrapper {
@@ -42,10 +77,11 @@ li::-moz-focus-inner {
 	height: 68px !important;
 	line-height: 10px !important;
 	width: 68px !important;
+	color: #3F8EC4 !important;
 }
 
 .plus {
 	text-align: center;
-	color: #3F8EC4;;
+	color: #3F8EC4;
 	font-size: 65px !important;
 }
