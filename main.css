@@ -1,5 +1,10 @@
 body {
 	color: #3F8EC4;
+	font-family: 'Niconne', cursive;
+}
+
+.container-fluid {
+	font-family: 'Lato', sans-serif;
 }
 
 .navbar {
@@ -27,6 +32,7 @@ label {
 }
 
 .createListForm {
+	font-family: 'Lato', sans-serif;
 	width: 500px;
 	text-align: center;
 }
