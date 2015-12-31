@@ -15,6 +15,10 @@
       {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
     ];
 
+    $scope.selectList = function() {
+      $scope.selected = true;
+    }
+
     function showAddListDialog($event) {
       var parentEl = angular.element(document.body);
       $mdDialog.show({
