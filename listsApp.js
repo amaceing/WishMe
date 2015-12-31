@@ -1,9 +1,12 @@
 (function(angular, undefined) {
+  "use strict";
   angular.module('listsApp', ['ngMaterial']).controller('ListsController', ListsController);
 
   function ListsController($scope, $mdDialog) {
     $scope.listName = "";
-    $scope.listType;
+    $scope.listType = "";
+    $scope.test = "Test";
+    $scope.showAddListDialog = showAddListDialog;
 
     $scope.wishLists = [
       {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
@@ -12,9 +15,11 @@
       {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
     ];
 
-    var parentEl = angular.element(document.body);
-    var alert = $mdDialog.alert({
+    function showAddListDialog($event) {
+      var parentEl = angular.element(document.body);
+      $mdDialog.show({
         parent: parentEl,
+        targetEvent : $event,
         template:     '<md-dialog layout-padding>' +
                       '  <md-dialog-content class="createListForm">'+
                       '     <h2>Create a Wish List</h2>' +
@@ -34,32 +39,28 @@
                       '  </md-dialog-content>' +
                       '</md-dialog>',
         clickOutsideToClose: true,
-        controller: CreateListController
-    });
+        locals: {
+          lists: $scope.wishLists,
+          listName: $scope.listName,
+          listType: $scope.listType
+        },
+        controller: AddListController
+      });
 
-    $scope.showAlert = function(ev) {
-      console.log($rootScope.wishLists);
-      $mdDialog.show(alert);
-    };
+      function AddListController($scope, $mdDialog, lists, listName, listType) {
+        $scope.wishLists = lists;
+        $scope.listName = listName;
+        $scope.listType = listType;
 
-    $scope.closeDialog = function() {
-      console.log($rootScope.wishLists);
-      console.log($scope.listType);
-      console.log($scope.listName);
-      $mdDialog.hide(alert);
+        $scope.closeDialog = function() {
+          $mdDialog.hide();
+        }
 
+        $scope.addList = function() {
+          $scope.wishLists.push({type: $scope.listType, name: $scope.listName, dateCreated: '12/31/2015', dateModified: 'Yesterday'});
+          $scope.closeDialog();
+        }
+      }
     }
-
-    $scope.addList = function() {
-      console.log($rootScope.wishLists);
-      $scope.wishLists.push({type:$scope.listType, name:$scope.listName, dateCreated: 'Test', dateModified: 'Test'});
-      $mdDialog.hide(alert);
-      console.log($rootScope.wishLists);
-    }
-
-    function CreateListController($scope, $mdDialog, wishLists) {
-
-    }
-
   }
 })(angular);
