@@ -7,16 +7,18 @@
     $scope.listName = "";
     $scope.errorOnRequired = false;
     $scope.showAddListDialog = showAddListDialog;
+    $scope.listSelected = false;
 
     $scope.wishLists = [
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'test', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'test', dateCreated:'11/23/2015', dateModified:'Today'}
+      {type:'Christmas', name:'Julissa', dateCreated:'11/23/2015', dateModified:'Today'},
+      {type:'Birthday', name:'Ruben', dateCreated:'11/23/2015', dateModified:'Today'},
+      {type:'Christmas', name:'Emily', dateCreated:'11/23/2015', dateModified:'Today'},
+      {type:'Birthday', name:'Mom', dateCreated:'11/23/2015', dateModified:'Today'}
     ];
 
-    $scope.selectList = function() {
-      $scope.selected = true;
+    $scope.selectList = function($list) {
+      $scope.listSelected = true;
+      console.log($list);
     }
 
     function showAddListDialog($event) {

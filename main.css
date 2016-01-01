@@ -62,23 +62,25 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
     border-color: #3F8EC4 !important;
 }
 
-.tableWrapper {
-	height: 600px;
-	overflow: auto;
+#content {
+	text-align: center;
+	background-color: #F0F0F0;
+	font-family: 'Lato', sans-serif !important;
 }
 
-.footer {
-	display: inline-block;
-	position: fixed;
-	bottom: 0px;
-	height: 68px;
-	width: 100%;
-	border: none;
-	padding-bottom: 0px;
-	margin-bottom: 25px;
+#content p {
+	padding-top: 25%;
+	font-size: 70px !important;
+	color:  #C8C8C8;
+	text-shadow: 0px -1px 0px rgba(0,0,0,.5); /* 50% black coming from the top */
+	font-weight: bold;
 }
 
 .actions {
+	padding-top: 50px;
+	width: 100%;
+	position:absolute;
+	margin-top:100%;
 	background-color: white;
 	text-align: center;
 }
