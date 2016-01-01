@@ -30,6 +30,11 @@ h2 {
 	color: #3F8EC4;
 }
 
+.listNameHeader {
+	color: #3F8EC4;
+	font-size: 45px;
+}
+
 label {
 	color: #3F8EC4 !important; 
 	text-align: left;
@@ -68,7 +73,11 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	font-family: 'Lato', sans-serif !important;
 }
 
-#content p {
+.wishListItems {
+	background-color: white;
+}
+
+.noData {
 	padding-top: 25%;
 	font-size: 70px !important;
 	color:  #C8C8C8;

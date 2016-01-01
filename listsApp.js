@@ -8,16 +8,30 @@
     $scope.errorOnRequired = false;
     $scope.showAddListDialog = showAddListDialog;
     $scope.listSelected = false;
+    $scope.selectedList = {};
 
     $scope.wishLists = [
-      {type:'Christmas', name:'Julissa', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'Ruben', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Christmas', name:'Emily', dateCreated:'11/23/2015', dateModified:'Today'},
-      {type:'Birthday', name:'Mom', dateCreated:'11/23/2015', dateModified:'Today'}
+      {
+        type:'Christmas', name:'Julissa\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
+        items: [{name:'Rocket League'}, {name:'Toothpase'}, {name:'Dog Bowls'}, {name: 'iPhone'}]
+      },
+      {
+        type:'Birthday', name:'Ruben\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
+        items: [{name:'Rocket League'}, {name:'Wallet'}, {name:'Watch'}]
+      },
+      {
+        type:'Christmas', name:'Emily\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
+        items: [{name:'Diamond'}, {name:'Purse'}, {name:'Jacket'}]
+      },
+      {
+        type:'Birthday', name:'Mom\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
+        items: [{name:'Boots'}, {name:'Watch'}, {name:'Bed'}]
+      }
     ];
 
     $scope.selectList = function($list) {
       $scope.listSelected = true;
+      $scope.selectedList = $list;
       console.log($list);
     }
 
