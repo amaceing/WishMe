@@ -44,7 +44,35 @@
 				<p ng-show="!listSelected" class="noData">Please choose a WishList<br>to work on</p>
 				<div class="listContent" ng-show="listSelected">
 					<div class="col-md-12">
-						<h2 class="listNameHeader">{{selectedList.name}}</h2>
+						<h2 class="listNameHeader">
+							{{selectedList.name}}
+							<md-menu-bar>
+					        	<md-menu>
+					            	<button ng-click="$mdOpenMenu()">
+					              		Edit
+					            	</button>
+					            	<md-menu-content>
+              							<md-menu-item class="textCenter">
+              								<md-button class="menuButton" ng-click="showAddItemDialog()">
+              									Add Item to List
+              								</md-button>
+              							</md-menu-item>
+              							<md-menu-divider></md-menu-divider>
+              							<md-menu-item>
+              								<md-button class="menuButton">
+              									Delete Item(s) from List
+              								</md-button>
+              							</md-menu-item>
+              							<md-menu-divider></md-menu-divider>
+              							<md-menu-item>
+              								<md-button class="menuButton">
+              									Delete List
+              								</md-button>
+              							</md-menu-item>
+              						</md-menu-content>
+					          	</md-menu>
+					        </md-menu-bar>
+						</h2>
 						<md-divider ></md-divider>
 						<md-list class="wishListItems">
 					      	<md-list-item class="md-2-line md-no-proxy ng-scope" ng-repeat="item in selectedList.items">

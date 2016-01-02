@@ -77,6 +77,22 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	background-color: white;
 }
 
+.menuText {
+	font-size: 20px;
+	border: none;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.menuButton {
+	font-size: 20px !important;
+	background-color: white !important;
+	margin:0 auto !important;
+    display:block !important;
+}
+
 .noData {
 	padding-top: 25%;
 	font-size: 70px !important;
@@ -94,15 +110,11 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	text-align: center;
 }
 
-.md-button {
-	height: 68px !important;
-	line-height: 10px !important;
-	width: 68px !important;
-	color: #3F8EC4 !important;
-}
-
 .plus {
+	height: 68px !important;
+	width: 68px !important;
 	text-align: center;
-	color: #3F8EC4;
+	color: #3F8EC4 !important;
 	font-size: 65px !important;
+	line-height: 10px !important;
 }
