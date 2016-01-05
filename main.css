@@ -93,6 +93,11 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
     display:block !important;
 }
 
+.addItemInputs {
+	width: 75%;
+	margin: auto;
+}
+
 .noData {
 	padding-top: 25%;
 	font-size: 70px !important;

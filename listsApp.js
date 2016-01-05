@@ -20,19 +20,35 @@
     $scope.wishLists = [
       {
         type:'Christmas', name:'Julissa\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [{name:'Rocket League'}, {name:'Toothpase'}, {name:'Dog Bowls'}, {name: 'iPhone'}]
+        items: [
+          {name:'Rocket League', dateAdded:new Date()}, 
+          {name:'Toothpase', dateAdded:new Date()}, 
+          {name:'Dog Bowls', dateAdded:new Date()}, 
+          {name: 'iPhone', dateAdded:new Date()}
+        ]
       },
       {
         type:'Birthday', name:'Ruben\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [{name:'Rocket League'}, {name:'Wallet'}, {name:'Watch'}]
+        items: [
+          {name:'Rocket League', dateAdded:new Date()}, 
+          {name:'Wallet', dateAdded:new Date()}, 
+          {name:'Watch', dateAdded:new Date()}
+        ]
       },
       {
         type:'Christmas', name:'Emily\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [{name:'Diamond'}, {name:'Purse'}, {name:'Jacket'}]
+        items: [
+          {name:'Diamond', dateAdded:new Date()}, 
+          {name:'Purse', dateAdded:new Date()}
+        ]
       },
       {
         type:'Birthday', name:'Mom\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [{name:'Boots'}, {name:'Watch'}, {name:'Bed'}]
+        items: [
+          {name:'Boots', dateAdded:new Date()}, 
+          {name:'Watch', dateAdded:new Date()}, 
+          {name:'Bed', dateAdded:new Date()}
+        ]
       }
     ];
 
@@ -63,7 +79,7 @@
                       '  <md-dialog-content class="createListForm">'+
                       '     <h2>Add Item</h2>' +
                       '     <form name="addItemForm">' +
-                      '       <div layout-gt-sm="row">' +
+                      '       <div class="addItemInputs">' +
                       '         <md-input-container class="md-block formInput" flex-gt-sm>' + 
                       '           <label>Item Name</label>' + 
                       '           <input required name="itemName" ng-model="itemName">' +
@@ -78,43 +94,34 @@
                       '             <div ng-message="required">This is required.</div>' +
                       '           </div>' +
                       '         </md-input-container>' + 
-                      '         </div>' +
-                      '       <md-radio-group ng-model="listType" class="md-primary">' +
-                      '         <md-radio-button value="Birthday" class="md-primary formInput">Birthday</md-radio-button>' +
-                      '         <md-radio-button value="Christmas" class="md-primary formInput">Christmas</md-radio-button>' + 
-                      '       </md-radio-group>' + 
+                      '       </div>' +
                       '       <md-button ng-click="test()" class="md-primary">' +
-                      '         Create!' +
+                      '         Add!' +
                       '       </md-button>' +
                       '     </form>' + 
                       '  </md-dialog-content>' +
                       '</md-dialog>',
         clickOutsideToClose: true,
         locals: {
+          selectedList: $scope.selectedList,
           itemName: $scope.itemName,
           itemPrice: $scope.itemPrice
         },
         controller: AddItemController
       });
 
-      function AddItemController($scope, itemPrice) {
+      function AddItemController($scope, selectedList, itemName, itemPrice) {
+        $scope.selectedList = selectedList;
+        $scope.itemName = itemName;
         $scope.itemPrice = itemPrice;
 
         $scope.test = function() {
-          console.log($scope.itemPrice);
+          $scope.selectedList.items.push({name: $scope.itemName, dateAdded: new Date()});
+          $scope.closeDialog();
         }
 
         $scope.closeDialog = function() {
           $mdDialog.hide();
-        }
-
-        $scope.addList = function() {
-          if ($scope.listName == "") {
-            $scope.errorOnRequired = true;
-          } else {
-            $scope.wishLists.push({type: $scope.listType, name: $scope.listName, dateCreated: '12/31/2015', dateModified: 'Yesterday'});
-            $scope.closeDialog();
-          }
         }
       }
     }
