@@ -81,6 +81,18 @@
       console.log("test");
     }
 
+    $scope.deletion = function() {
+      $('.md-2-line').hover(
+        function() {
+          $(this).css("background-color", "#F2DEDE");
+        },
+        function() {
+          $(this).css("background-color", "white");
+        }
+      )
+    }
+
+
     $scope.openMenu = function($mdOpenMenu, ev) {
       var originatorEv = ev;
       $mdOpenMenu(ev);
