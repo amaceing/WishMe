@@ -75,6 +75,8 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 
 .wishListItems {
 	background-color: white;
+	overflow: auto;
+	max-height: 600px;
 }
 
 .menuText {
