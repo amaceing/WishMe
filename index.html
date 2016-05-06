@@ -49,9 +49,18 @@
 							{{selectedList.name}}
 							<md-menu-bar>
 					        	<md-menu>
-					            	<md-button ng-click="$mdOpenMenu()">
-					              		Edit List
-					            	</md-button>
+					        		<div layout="row">
+					        			<div flex>
+						            		<md-button ng-click="$mdOpenMenu()">
+						              			Edit List
+						            		</md-button>
+						            	</div>
+						            	<div flex>
+						            		<md-button ng-click="$mdOpenMenu()">
+						              			Share List
+						            		</md-button>
+						            	</div>
+					            	</div>
 					            	<md-menu-content width="4">
               							<md-menu-item class="textCenter">
               								<md-button class="menuButton" ng-click="showAddItemDialog()">
