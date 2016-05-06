@@ -107,7 +107,7 @@
         targetEvent : $event,
         template:     '<md-dialog layout-padding>' +
                       '  <md-dialog-content class="createListForm">'+
-                      '     <h2 class="h2Blue">Add Item</h2>' +
+                      '     <h2 class="md-display-2">Add Item</h2>' +
                       '     <form name="addItemForm">' +
                       '       <div class="addItemInputs">' +
                       '         <md-input-container class="md-block formInput" flex-gt-sm>' + 
@@ -164,7 +164,7 @@
         targetEvent : $event,
         template:     '<md-dialog layout-padding>' +
                       '  <md-dialog-content class="createListForm">'+
-                      '     <h2>Create a Wish List</h2>' +
+                      '     <h2 class="md-display-2">Create a Wish List</h2>' +
                       '     <form name="createListForm">' +
                       '       <md-input-container class="md-block formInput">' + 
                       '         <label>Wish List Name</label>' + 

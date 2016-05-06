@@ -18,7 +18,7 @@
 	<body ng-controller="ListsController as wishList" layout="column">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
-				<h1>Here's your wish!</h1>
+				<h1 class="md-display-4">Here's your wish!</h1>
 		  	</div>
 		</nav>
 		<div flex layout="row">
@@ -45,7 +45,7 @@
 				<p ng-show="!listSelected" class="noData">Please choose a WishList<br>to work on</p>
 				<div class="listContent" ng-show="listSelected">
 					<div class="col-md-12">
-						<h2 class="listNameHeader">
+						<h2 class="listNameHeader md-display-2">
 							{{selectedList.name}}
 							<md-menu-bar>
 					        	<md-menu>
