@@ -12,6 +12,7 @@ body {
 }
 
 .navbar {
+	/* position: -webkit-sticky; */
 	text-align: center;
 	background-color: #3F8EC4;
 	height: 150px;
@@ -109,10 +110,11 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .actions {
-	padding-top: 50px;
+	position: -webkit-sticky;
+	padding-bottom: 50px;
 	width: 100%;
 	position:absolute;
-	margin-top:100%;
+	margin-top:125%;
 	background-color: white;
 	text-align: center;
 }

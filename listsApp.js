@@ -13,59 +13,59 @@
     $scope.selectedList = {};
 
     //item
-    $scope.itemName = "";
-    $scope.itemPrice = "";
+    $scope.itemName;
+    $scope.itemPrice;
 
     //List prototypes
     $scope.wishLists = [
       {
         type:'Christmas', name:'Julissa\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()},
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()}, 
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()}, 
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()}, 
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()}, 
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()}, 
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Toothpase', dateAdded:new Date()}, 
-          {name:'Dog Bowls', dateAdded:new Date()}, 
-          {name: 'iPhone', dateAdded:new Date()}
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'},
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
+          {name: 'iPhone', dateAdded:new Date(), price:'9.99'}
         ]
       },
       {
         type:'Birthday', name:'Ruben\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Rocket League', dateAdded:new Date()}, 
-          {name:'Wallet', dateAdded:new Date()}, 
-          {name:'Watch', dateAdded:new Date()}
+          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Wallet', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Watch', dateAdded:new Date(), price:'9.99'}
         ]
       },
       {
         type:'Christmas', name:'Emily\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Diamond', dateAdded:new Date()}, 
-          {name:'Purse', dateAdded:new Date()}
+          {name:'Diamond', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Purse', dateAdded:new Date(), price:'9.99'}
         ]
       },
       {
         type:'Birthday', name:'Mom\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Boots', dateAdded:new Date()}, 
-          {name:'Watch', dateAdded:new Date()}, 
-          {name:'Bed', dateAdded:new Date()}
+          {name:'Boots', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Watch', dateAdded:new Date(), price:'9.99'}, 
+          {name:'Bed', dateAdded:new Date(), price:'9.99'}
         ]
       }
     ];
@@ -107,25 +107,23 @@
         targetEvent : $event,
         template:     '<md-dialog layout-padding>' +
                       '  <md-dialog-content class="createListForm">'+
-                      '     <h2>Add Item</h2>' +
+                      '     <h2 class="h2Blue">Add Item</h2>' +
                       '     <form name="addItemForm">' +
                       '       <div class="addItemInputs">' +
                       '         <md-input-container class="md-block formInput" flex-gt-sm>' + 
                       '           <label>Item Name</label>' + 
                       '           <input required name="itemName" ng-model="itemName">' +
-                      '           <div ng-if="$scope.errorOnRequired">' +
-                      '             <div ng-message="required">This is required.</div>' +
-                      '           </div>' +
                       '         </md-input-container>' + 
                       '         <md-input-container class="md-block formInput" flex-gt-sm>' + 
                       '           <label>Item Price</label>' + 
-                      '           <input required type="number" step="0.01" name="itemPrice" ng-model="itemPrice">' +
+                      '           <input required required type="number" step="any" name="rate" min="800"' +
+                      '             max="4999" ng-pattern="/^1234$/" name="itemPrice" ng-model="itemPrice">' +
                       '           <div ng-if="$scope.errorOnRequired">' +
                       '             <div ng-message="required">This is required.</div>' +
                       '           </div>' +
                       '         </md-input-container>' + 
                       '       </div>' +
-                      '       <md-button ng-click="test()" class="md-primary">' +
+                      '       <md-button ng-click="test()">' +
                       '         Add!' +
                       '       </md-button>' +
                       '     </form>' + 
@@ -141,12 +139,14 @@
       });
 
       function AddItemController($scope, selectedList, itemName, itemPrice) {
+        console.log(itemName);
+        console.log(itemPrice);
         $scope.selectedList = selectedList;
         $scope.itemName = itemName;
         $scope.itemPrice = itemPrice;
 
         $scope.test = function() {
-          $scope.selectedList.items.push({name: $scope.itemName, dateAdded: new Date()});
+          $scope.selectedList.items.unshift({name: $scope.itemName, dateAdded: new Date(), price:$scope.itemPrice});
           $scope.closeDialog();
         }
 
@@ -177,7 +177,7 @@
                       '         <md-radio-button value="Birthday" class="md-primary formInput">Birthday</md-radio-button>' +
                       '         <md-radio-button value="Christmas" class="md-primary formInput">Christmas</md-radio-button>' + 
                       '       </md-radio-group>' + 
-                      '       <md-button ng-click="addList()" class="md-primary">' +
+                      '       <md-button ng-click="addList()">' +
                       '         Create!' +
                       '       </md-button>' +
                       '     </form>' + 
