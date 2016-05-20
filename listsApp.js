@@ -105,30 +105,7 @@
       $mdDialog.show({
         parent: parentEl,
         targetEvent : $event,
-        template:     '<md-dialog layout-padding>' +
-                      '  <md-dialog-content class="createListForm">'+
-                      '     <h2 class="md-display-2">Add Item</h2>' +
-                      '     <form name="addItemForm">' +
-                      '       <div class="addItemInputs">' +
-                      '         <md-input-container class="md-block formInput" flex-gt-sm>' + 
-                      '           <label>Item Name</label>' + 
-                      '           <input required name="itemName" ng-model="itemName">' +
-                      '         </md-input-container>' + 
-                      '         <md-input-container class="md-block formInput" flex-gt-sm>' + 
-                      '           <label>Item Price</label>' + 
-                      '           <input required required type="number" step="any" name="rate" min="800"' +
-                      '             max="4999" ng-pattern="/^1234$/" name="itemPrice" ng-model="itemPrice">' +
-                      '           <div ng-if="$scope.errorOnRequired">' +
-                      '             <div ng-message="required">This is required.</div>' +
-                      '           </div>' +
-                      '         </md-input-container>' + 
-                      '       </div>' +
-                      '       <md-button ng-click="test()">' +
-                      '         Add!' +
-                      '       </md-button>' +
-                      '     </form>' + 
-                      '  </md-dialog-content>' +
-                      '</md-dialog>',
+        templateUrl: 'addItemDialog.html',
         clickOutsideToClose: true,
         locals: {
           selectedList: $scope.selectedList,
@@ -162,27 +139,7 @@
       $mdDialog.show({
         parent: parentEl,
         targetEvent : $event,
-        template:     '<md-dialog layout-padding>' +
-                      '  <md-dialog-content class="createListForm">'+
-                      '     <h2 class="md-display-2">Create a Wish List</h2>' +
-                      '     <form name="createListForm">' +
-                      '       <md-input-container class="md-block formInput">' + 
-                      '         <label>Wish List Name</label>' + 
-                      '         <input required name="listName" ng-model="listName">' +
-                      '         <div ng-if="$scope.errorOnRequired">' +
-                      '           <div ng-message="required">This is required.</div>' +
-                      '         </div>' +
-                      '       </md-input-container>' + 
-                      '       <md-radio-group ng-model="listType" class="md-primary">' +
-                      '         <md-radio-button value="Birthday" class="md-primary formInput">Birthday</md-radio-button>' +
-                      '         <md-radio-button value="Christmas" class="md-primary formInput">Christmas</md-radio-button>' + 
-                      '       </md-radio-group>' + 
-                      '       <md-button ng-click="addList()">' +
-                      '         Create!' +
-                      '       </md-button>' +
-                      '     </form>' + 
-                      '  </md-dialog-content>' +
-                      '</md-dialog>',
+        templateUrl: 'addListDialog.html',
         clickOutsideToClose: true,
         locals: {
           lists: $scope.wishLists,
