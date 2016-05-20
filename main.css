@@ -110,13 +110,7 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .actions {
-	position: -webkit-sticky;
-	padding-bottom: 50px;
-	width: 100%;
-	position:absolute;
-	margin-top:125%;
-	background-color: white;
-	text-align: center;
+	margin-bottom: 20px;
 }
 
 .plus {

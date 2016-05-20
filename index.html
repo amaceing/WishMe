@@ -22,8 +22,8 @@
 		  	</div>
 		</nav>
 		<div flex layout="row">
-			<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 lato">
-				<md-list>
+			<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 lato" layout="column">
+				<md-list flex>
 			    	<md-list-item class="md-3-line md-no-proxy ng-scope" ng-repeat="list in wishLists" ng-click="selectList(list)" ng-class="{'selected': selected}">
 			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
 			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Birthday'"><i class="fa fa-birthday-cake"></i></h2>
@@ -35,8 +35,8 @@
 			        	<md-divider ng-if="!$last"></md-divider>
 			      	</md-list-item>
 			    </md-list>
-			    <div class="actions">
-					<md-button class="md-icon-button md-button md-ink-ripple plus md-raised" aria-label="addList" ng-click="showAddListDialog($event)">
+			    <div class="actions" layout="row" layout-align="center end" flex>
+					<md-button class="plus md-icon-button md-button md-ink-ripple md-raised" aria-label="addList" ng-click="showAddListDialog($event)">
 						<i class="fa fa-plus-circle"></i>
 					</md-button>
 				</div>
