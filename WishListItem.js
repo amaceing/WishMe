@@ -5,27 +5,27 @@ class WishListItem {
 		this.dateAdded = dateAdded;
 	}
 
-	getName() {
+	get name() {
 		return this.name;
 	}
 
-	getPrice() {
+	get price() {
 		return this.price;
 	}
 
-	getDateAdded() {
+	get dateAdded() {
 		return this.dateAdded;
 	}
 
-	setName(newName) {
+	set Name(newName) {
 		this.name = newName;
 	}
 
-	setPrice(newPrice) {
+	set price(newPrice) {
 		this.price = newPrice;
 	}
 
-	setDateAdded(newDateAdded) {
+	set dateAdded(newDateAdded) {
 		this.dateAdded = newDateAdded;
 	}
 }
