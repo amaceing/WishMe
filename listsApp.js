@@ -21,51 +21,42 @@
       {
         type:'Christmas', name:'Julissa\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'},
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Toothpase', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Dog Bowls', dateAdded:new Date(), price:'9.99'}, 
-          {name: 'iPhone', dateAdded:new Date(), price:'9.99'}
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date())
         ]
       },
       {
         type:'Birthday', name:'Ruben\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Rocket League', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Wallet', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Watch', dateAdded:new Date(), price:'9.99'}
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date())
         ]
       },
       {
         type:'Christmas', name:'Emily\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Diamond', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Purse', dateAdded:new Date(), price:'9.99'}
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date())
         ]
       },
       {
         type:'Birthday', name:'Mom\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
         items: [
-          {name:'Boots', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Watch', dateAdded:new Date(), price:'9.99'}, 
-          {name:'Bed', dateAdded:new Date(), price:'9.99'}
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date())
         ]
       }
     ];

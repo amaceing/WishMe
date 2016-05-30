@@ -1,7 +1,8 @@
 class WishListItem {
-	constructor(name, price) {
+	constructor(name, price, dateAdded) {
 		this.name = name;
 		this.price = price;
+		this.dateAdded = dateAdded;
 	}
 
 	getName() {
@@ -12,11 +13,19 @@ class WishListItem {
 		return this.price;
 	}
 
+	getDateAdded() {
+		return this.dateAdded;
+	}
+
 	setName(newName) {
 		this.name = newName;
 	}
 
 	setPrice(newPrice) {
 		this.price = newPrice;
+	}
+
+	setDateAdded(newDateAdded) {
+		this.dateAdded = newDateAdded;
 	}
 }
