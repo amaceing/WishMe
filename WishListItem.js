@@ -1,31 +1,31 @@
 class WishListItem {
 	constructor(name, price, dateAdded) {
-		this.name = name;
-		this.price = price;
-		this.dateAdded = dateAdded;
+		this._name = name;
+		this._price = price;
+		this._dateAdded = dateAdded;
 	}
 
 	get name() {
-		return this.name;
+		return this._name;
 	}
 
 	get price() {
-		return this.price;
+		return this._price;
 	}
 
 	get dateAdded() {
-		return this.dateAdded;
+		return this._dateAdded;
 	}
 
-	set Name(newName) {
-		this.name = newName;
+	set name(newName) {
+		this._name = newName;
 	}
 
 	set price(newPrice) {
-		this.price = newPrice;
+		this._price = newPrice;
 	}
 
 	set dateAdded(newDateAdded) {
-		this.dateAdded = newDateAdded;
+		this._dateAdded = newDateAdded;
 	}
 }

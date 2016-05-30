@@ -17,13 +17,11 @@
 		<script src="WishListItem.js"></script>
 	</head>
 	<body ng-controller="ListsController as wishList" layout="column">
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<h1 class="md-display-4">Here's your wish!</h1>
-		  	</div>
-		</nav>
+		<div class="container-fluid banner">
+			<p>Here's your wish!</p>
+		</div>
 		<div flex layout="row">
-			<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 lato" layout="column">
+			<md-sidenav flex md-is-locked-open="true" class="md-whiteframe-z2 lato">
 				<md-list flex>
 			    	<md-list-item class="md-3-line md-no-proxy ng-scope" ng-repeat="list in wishLists" ng-click="selectList(list)" ng-class="{'selected': selected}">
 			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
