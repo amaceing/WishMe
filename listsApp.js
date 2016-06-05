@@ -89,10 +89,6 @@
       console.log($list);
     }
 
-    $scope.addItemToList = function() {
-      console.log("test");
-    }
-
     $scope.deletion = function() {
       $('.md-2-line').hover(
         function() {
@@ -112,7 +108,6 @@
 
     //dialog for adding item to list
     $scope.showAddItemDialog = function($event) {
-      console.log("test");
       var parentEl = angular.element(document.body);
       $mdDialog.show({
         parent: parentEl,
@@ -128,14 +123,15 @@
       });
 
       function AddItemController($scope, selectedList, itemName, itemPrice) {
-        console.log(itemName);
-        console.log(itemPrice);
         $scope.selectedList = selectedList;
         $scope.itemName = itemName;
         $scope.itemPrice = itemPrice;
 
-        $scope.test = function() {
-          $scope.selectedList.items.unshift({name: $scope.itemName, dateAdded: new Date(), price:$scope.itemPrice});
+        $scope.addItem = function() {
+          console.log($scope.itemName);
+          console.log($scope.itemPrice);
+          var newItem = new WishListItem($scope.itemName, $scope.itemPrice, new Date());
+          $scope.selectedList.wishListItems.unshift(newItem);
           $scope.closeDialog();
         }
 
@@ -176,7 +172,9 @@
           if ($scope.listName == "") {
             $scope.errorOnRequired = true;
           } else {
-            $scope.wishLists.push({type: $scope.listType, name: $scope.listName, dateCreated: '12/31/2015', dateModified: 'Yesterday'});
+            $scope.wishLists.push(
+              new WishList($scope.listName, $scope.listType, '12/31/2015', '06/03/2016', [])
+            );
             $scope.closeDialog();
           }
         }
