@@ -1,4 +1,5 @@
 class WishListItem {
+
 	constructor(name, price, dateAdded) {
 		this._name = name;
 		this._price = price;
@@ -28,4 +29,5 @@ class WishListItem {
 	set dateAdded(newDateAdded) {
 		this._dateAdded = newDateAdded;
 	}
+	
 }

@@ -18,9 +18,12 @@
 
     //List prototypes
     $scope.wishLists = [
-      {
-        type:'Christmas', name:'Julissa\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [
+      new WishList(
+        'Julissa\'s Christmas', 
+        'Christmas', 
+        '11/23/2015', 
+        '06/04/2016',
+        [
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date()),
@@ -34,31 +37,49 @@
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date())
         ]
-      },
-      {
-        type:'Birthday', name:'Ruben\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [
+      ),
+      new WishList('Julissa\'s Christmas', 
+        'Christmas', 
+        '11/23/2015', 
+        '06/04/2016',
+        [
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date()),
-          new WishListItem('Rocket League', 9.99, new Date())
-        ]
-      },
-      {
-        type:'Christmas', name:'Emily\'s Christmas', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [
-          new WishListItem('Rocket League', 9.99, new Date()),
-          new WishListItem('Rocket League', 9.99, new Date())
-        ]
-      },
-      {
-        type:'Birthday', name:'Mom\'s Birthday', dateCreated:'11/23/2015', dateModified:'Today', 
-        items: [
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date()),
           new WishListItem('Rocket League', 9.99, new Date())
         ]
-      }
+      ),
+      new WishList('Julissa\'s Christmas', 
+        'Christmas', 
+        '11/23/2015', 
+        '06/04/2016',
+        [
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date())
+        ]
+      ),
+      new WishList(
+        'Julissa\'s Christmas', 
+        'Christmas', 
+        '11/23/2015', 
+        '06/04/2016',
+        [
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date()),
+          new WishListItem('Rocket League', 9.99, new Date())
+        ]
+      ),
     ];
 
     //selecting list

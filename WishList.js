@@ -1,9 +1,11 @@
 class WishList {
-	constructor(name, type, dateCreated, dateModified) {
+
+	constructor(name, type, dateCreated, dateModified, wishListItems) {
 		this._name = name;
 		this._type = type;
 		this._dateCreated = dateCreated;
 		this._dateModified = dateModified;
+		this._wishListItems = wishListItems;
 	}
 
 	get name() {
@@ -38,5 +40,12 @@ class WishList {
 		this._dateModified = newDateModified;
 	}
 
+	get wishListItems() {
+		return this._wishListItems;
+	}
 
+	set wishListItems(newWishListItems) {
+		this._wishListItems = newWishListItems;
+	}
+	
 }
