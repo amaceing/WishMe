@@ -13,16 +13,16 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script src="WishListItem.js"></script>
+		<script src="WishList.js"></script>
 		<script src="listsApp.js"></script>
 	</head>
 	<body ng-controller="ListsController as wishList" layout="column">
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<h1 class="md-display-4">Here's your wish!</h1>
-		  	</div>
-		</nav>
+		<div class="container-fluid banner">
+			<p>Here's your wish!</p>
+		</div>
 		<div flex layout="row">
-			<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 lato" layout="column">
+			<md-sidenav flex md-is-locked-open="true" class="md-whiteframe-z2 lato">
 				<md-list flex>
 			    	<md-list-item class="md-3-line md-no-proxy ng-scope" ng-repeat="list in wishLists" ng-click="selectList(list)" ng-class="{'selected': selected}">
 			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
@@ -88,7 +88,7 @@
 						</h2>
 						<md-divider ></md-divider>
 						<md-list class="wishListItems">
-					      	<md-list-item class="md-2-line md-no-proxy ng-scope" ng-repeat="item in selectedList.items">
+					      	<md-list-item class="md-2-line md-no-proxy ng-scope" ng-repeat="item in selectedList.wishListItems">
 					        	<div class="md-list-item-text" layout="column">
 					          		<h3>{{item.name}} - ${{item.price}}</h3>
 					          		<h4>{{item.dateAdded | date: shortDate}}</h4>

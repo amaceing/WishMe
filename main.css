@@ -11,15 +11,23 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
-.navbar {
+.banner {
 	/* position: -webkit-sticky; */
+	color: white;
 	text-align: center;
 	background-color: #3F8EC4;
 	height: 150px;
+	min-height: 120px;
 	position: relative;
 	border: none;
+	font-size: 6vw !important;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
+	font-family: 'Niconne', cursive;
+}
+
+.md-display-4 {
+	font-size: 8em;
 }
 
 h1 {
