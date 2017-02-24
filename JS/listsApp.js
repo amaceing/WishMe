@@ -172,9 +172,9 @@
           if ($scope.listName == "") {
             $scope.errorOnRequired = true;
           } else {
-            $scope.wishLists.push(
-              new WishList($scope.listName, $scope.listType, '12/31/2015', '06/03/2016', [])
-            );
+            var newWishList = new WishList($scope.listName, $scope.listType, '12/31/2015', '06/03/2016', []);
+            $scope.wishLists.push(newWishList);
+            newWishList.saveList();
             $scope.closeDialog();
           }
         }
