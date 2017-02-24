@@ -112,7 +112,7 @@
       $mdDialog.show({
         parent: parentEl,
         targetEvent : $event,
-        templateUrl: 'addItemDialog.html',
+        templateUrl: 'HTML/addItemDialog.html',
         clickOutsideToClose: true,
         locals: {
           selectedList: $scope.selectedList,
@@ -147,7 +147,7 @@
       $mdDialog.show({
         parent: parentEl,
         targetEvent : $event,
-        templateUrl: 'addListDialog.html',
+        templateUrl: 'HTML/addListDialog.html',
         clickOutsideToClose: true,
         locals: {
           lists: $scope.wishLists,
