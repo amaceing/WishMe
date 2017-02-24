@@ -47,5 +47,8 @@ class WishList {
 	set wishListItems(newWishListItems) {
 		this._wishListItems = newWishListItems;
 	}
-	
+
+	saveList() {
+		
+	}
 }
