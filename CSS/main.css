@@ -39,6 +39,12 @@ h2 {
 	color: #3F8EC4;
 }
 
+#left-bg-panel {
+	/*height: 100%;
+	width: 100%;*/
+	background-image: url("../Images/blueBG.jpg");
+}
+
 .listNameHeader {
 	color: #3F8EC4;
 	font-size: 45px;
