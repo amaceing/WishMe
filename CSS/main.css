@@ -39,10 +39,13 @@ h2 {
 	color: #3F8EC4;
 }
 
+.white-text {
+	color: white;
+}
+
 #left-bg-panel {
-	/*height: 100%;
-	width: 100%;*/
-	background-image: url("../Images/blueBG.jpg");
+	height: 100%;
+	background-image: url("../Images/blueBG.png");
 }
 
 .listNameHeader {
