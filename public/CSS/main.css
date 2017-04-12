@@ -48,6 +48,11 @@ h2 {
 	color: white !important; 
 }
 
+.white-button-blue-text {
+	background-color: white !important;
+	color: #3F8EC4 !important;
+}
+
 #left-bg-panel {
 	height: 100%;
 	background-image: url("../Images/blueBG.png");
