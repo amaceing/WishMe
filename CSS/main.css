@@ -43,9 +43,22 @@ h2 {
 	color: white;
 }
 
+.blue-button-white-text {
+	background-color: #3F8EC4 !important;
+	color: white !important; 
+}
+
 #left-bg-panel {
 	height: 100%;
 	background-image: url("../Images/blueBG.png");
+}
+
+.login-control {
+	margin-top: 75%;
+}
+
+.login-text {
+	margin-top: 30%;
 }
 
 .listNameHeader {

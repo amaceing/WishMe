@@ -1,4 +1,4 @@
-<html>
+<html ng-app="loginApp">
     <head>
         <title>WishMe</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -15,21 +15,28 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 		<script src="JS/firebaseSetup.js"></script>
-		<script src="JS/WishListItem.js"></script>
-		<script src="JS/WishList.js"></script>
-		<script src="JS/listsApp.js"></script>
+		<script src="JS/loginApp.js"></script>
     </head>
-    <body>
-            <div id="left-bg-panel" class="col-md-9 text-center">
-                <h1>WishMe</h1>
-                <h3 class="lato white-text">Keep track of your family's and friends' wishes!</h3>
+    <body ng-controller="LoginController as login">
+            <div id="left-bg-panel" class="col-xs-9 text-center">
+                <div class="login-text">
+                    <h1>WishMe</h1>
+                    <h3 class="lato white-text">Keep track of your family's and friends' wishes!</h3>
+                </div>
             </div>
-            <div class="col-md-3">
-                <h2 class="lato">Login</h2>
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>First name</label>
-                    <input ng-model="">
-                </md-input-container>
+            <div class="col-xs-3">
+                <div class="container-fluid text-center login-control">
+                    <h2>View Your Wishes!</h2>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label class="lato">Email</label>
+                        <input ng-model="email">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label class="lato">Password</label>
+                        <input ng-model="password">
+                    </md-input-container>
+                    <md-button class="md-raised blue-button-white-text" ng-click="logUserIn();">Login</md-button>
+                </div>
             </div>
     </body>
 </html>
