@@ -1,0 +1,16 @@
+<md-dialog layout-padding>
+    <md-dialog-content class="createListForm">
+        <h2 class="md-display-2">Register</h2>
+        <div class="addItemInputs">
+            <md-input-container class="md-block formInput" flex-gt-sm>
+                <label>Your Email</label>
+                <input ng-model="email">
+            </md-input-container>
+            <md-input-container class="md-block formInput" flex-gt-sm>
+                <label>Your Password</label>
+                <input type="password" ng-model="password">
+            </md-input-container>
+        </div>
+        <md-button ng-click="registerUser()">Register</md-button>
+    </md-dialog-content>
+</md-dialog>
