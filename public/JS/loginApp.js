@@ -6,6 +6,10 @@
         $scope.email = "";
         $scope.password = "";
 
+        $scope.registerUser() = function() {
+            console.log("test2");
+        }
+
         $scope.logUserIn = function() {
             console.log("test");
         }
