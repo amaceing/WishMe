@@ -1,0 +1,107 @@
+<html ng-app="listsApp">
+	<head>
+		<title>WishMe</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="CSS/main.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+		<script src="JS/firebaseSetup.js"></script>
+		<script src="JS/WishListItem.js"></script>
+		<script src="JS/WishList.js"></script>
+		<script src="JS/listsApp.js"></script>
+	</head>
+	<body ng-controller="ListsController as wishList" layout="column">
+		<div class="container-fluid banner">
+			<p>Here's your wish!</p>
+		</div>
+		<div flex layout="row">
+			<md-sidenav flex md-is-locked-open="true" class="md-whiteframe-z2 lato">
+				<md-list flex>
+			    	<md-list-item class="md-3-line md-no-proxy ng-scope" ng-repeat="list in wishLists" ng-click="selectList(list)" ng-class="{'selected': selected}">
+			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Christmas'"><i class="fa fa-gift"></i></h2>
+			    		<h2 style="padding-right: 10px; color:#3F8EC4;" ng-if="list.type == 'Birthday'"><i class="fa fa-birthday-cake"></i></h2>
+			        	<div class="md-list-item-text">
+			          		<h3>{{list.name}}</h3>
+			          		<p>Created: {{list.dateCreated}}</p>
+			          		<p>Modified: {{list.dateModified}}</p>
+			        	</div>
+			        	<md-divider ng-if="!$last"></md-divider>
+			      	</md-list-item>
+			    </md-list>
+			    <div class="actions" layout="row" layout-align="center end" flex>
+					<md-button class="plus md-icon-button md-button md-ink-ripple md-raised" aria-label="addList" ng-click="showAddListDialog($event)">
+						<i class="fa fa-plus-circle"></i>
+					</md-button>
+				</div>
+			</md-sidenav>
+			<md-content flex id="content">
+				<p ng-show="!listSelected" class="noData">Please choose a WishList<br>to work on</p>
+				<div class="listContent" ng-show="listSelected">
+					<div class="col-md-12">
+						<h2 class="listNameHeader md-display-2">
+							{{selectedList.name}}
+							<md-menu-bar>
+					        	<md-menu>
+					        		<div layout="row">
+					        			<div flex>
+						            		<md-button ng-click="$mdOpenMenu()">
+						              			Edit List
+						            		</md-button>
+						            	</div>
+						            	<div flex>
+						            		<md-button ng-click="$mdOpenMenu()">
+						              			Share List
+						            		</md-button>
+						            	</div>
+					            	</div>
+					            	<md-menu-content width="4">
+              							<md-menu-item class="textCenter">
+              								<md-button class="menuButton" ng-click="showAddItemDialog()">
+              									<i class="fa fa-plus-square" aria-hidden="true"></i>
+              									Add Item
+              								</md-button>
+              							</md-menu-item>
+              							<md-menu-divider></md-menu-divider>
+              							<md-menu-item>
+              								<md-button class="menuButton" ng-click="deletion()">
+              									<i class="fa fa-minus-circle" aria-hidden="true"></i>
+              									Delete Item(s)
+              								</md-button>
+              							</md-menu-item>
+              							<md-menu-divider></md-menu-divider>
+              							<md-menu-item>
+              								<md-button class="menuButton">
+              									<i class="fa fa-trash" aria-hidden="true"></i>
+              									Delete
+              								</md-button>
+              							</md-menu-item>
+              						</md-menu-content>
+					          	</md-menu>
+					        </md-menu-bar>
+						</h2>
+						<md-divider ></md-divider>
+						<md-list class="wishListItems">
+					      	<md-list-item class="md-2-line md-no-proxy ng-scope" ng-repeat="item in selectedList.wishListItems">
+					        	<div class="md-list-item-text" layout="column">
+					          		<h3>{{item.name}} - ${{item.price}}</h3>
+					          		<h4>{{item.dateAdded | date: shortDate}}</h4>
+					        	</div>
+					        	<md-divider ng-if="!$last"></md-divider>
+					      </md-list-item>
+					    </md-list>
+					</div>
+				</div>
+			</md-content>
+		</div>
+	</body>
+</html>
+
