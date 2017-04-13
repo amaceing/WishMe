@@ -156,3 +156,21 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	font-size: 65px !important;
 	line-height: 10px !important;
 }
+
+.sign-out {
+	height: 38px !important;
+	width: 38px !important;
+	text-align: center;
+	color: #990000 !important;
+	font-size: 35px !important;
+	line-height: 5px !important;
+}
+
+.settings {
+	height: 38px !important;
+	width: 38px !important;
+	text-align: center;
+	color: #006600 !important;
+	font-size: 35px !important;
+	line-height: 5px !important;
+}

@@ -6,13 +6,6 @@
         $scope.email = "";
         $scope.password = "";
 
-        firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-            console.log("signed out");
-        }).catch(function(error) {
-            // An error happened.
-        });
-
         $scope.logUserIn = function() {
             firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
                 // Handle Errors here.
@@ -27,9 +20,6 @@
                 if (user) {
                     // User is signed in.
                     window.location.href = "wishlists.html";
-                } else {
-                    // User is signed out.
-                    // ...
                 }
             });
         }

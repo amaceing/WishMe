@@ -16,6 +16,16 @@
 		$scope.itemName;
 		$scope.itemPrice;
 
+		firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				// User is signed in.
+			} else {
+				// User is signed out.
+				console.log("signed out?");
+				window.location.href = "index.html";
+			}
+		});
+		
 		//List prototypes
 		$scope.wishLists = [
 			new WishList(
@@ -78,6 +88,17 @@
 			),
 		];
 
+		$scope.signUserOut = function() {
+			firebase.auth().signOut().then(function() {
+				// Sign-out successful.
+				console.log("signed out");
+				window.location.href = "index.html";
+			}).catch(function(error) {
+				// An error happened.
+				console.log("sign out unsuccessful");
+			});
+		}
+
 		//selecting list
 		$scope.selectList = function ($list) {
 			$scope.listSelected = true;
@@ -95,7 +116,6 @@
 				}
 			)
 		}
-
 
 		$scope.openMenu = function ($mdOpenMenu, ev) {
 			var originatorEv = ev;
