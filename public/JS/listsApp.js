@@ -1,6 +1,6 @@
 (function (angular, undefined) {
 	"use strict";
-	angular.module('listsApp', ['ngMaterial', 'ngMessages']).controller('ListsController', ListsController);
+	angular.module('listsApp', ['ngMaterial']).controller('ListsController', ListsController);
 
 	function ListsController($scope, $mdDialog) {
 

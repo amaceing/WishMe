@@ -1,10 +1,17 @@
 (function(angular, undefined) {
     "use strict";
-    angular.module('loginApp', ['ngMaterial', 'ngMessages']).controller('LoginController', LoginController);
+    angular.module('loginApp', ['ngMaterial']).controller('LoginController', LoginController);
 
     function LoginController($scope, $mdDialog) {
         $scope.email = "";
         $scope.password = "";
+
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            console.log("signed out");
+        }).catch(function(error) {
+            // An error happened.
+        });
 
         $scope.logUserIn = function() {
             firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
@@ -13,24 +20,13 @@
                 var errorMessage = error.message;
                 if (errorCode === 'auth/wrong-password') {
                     alert('Wrong password.');
-                } else {
-                    alert(errorMessage);
                 }
-                console.log(error);
             });
             
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
                     // User is signed in.
-                    var displayName = user.displayName;
-                    var email = user.email;
-                    var emailVerified = user.emailVerified;
-                    var photoURL = user.photoURL;
-                    var isAnonymous = user.isAnonymous;
-                    var uid = user.uid;
-                    var providerData = user.providerData;
-                    // ...
-                    console.log(email + uid);
+                    window.location.href = "wishlists.html";
                 } else {
                     // User is signed out.
                     // ...
