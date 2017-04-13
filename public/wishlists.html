@@ -10,7 +10,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
@@ -22,6 +21,7 @@
 	<body ng-controller="ListsController as wishList" layout="column">
 		<div class="container-fluid banner">
 			<p>Here's your wish!</p>
+			<md-button class="pull-left">Sign out</md-button>
 		</div>
 		<div flex layout="row">
 			<md-sidenav flex md-is-locked-open="true" class="md-whiteframe-z2 lato">
@@ -38,8 +38,14 @@
 			      	</md-list-item>
 			    </md-list>
 			    <div class="actions" layout="row" layout-align="center end" flex>
+					<md-button class="settings md-icon-button md-button md-ink-ripple md-raised">
+						<i class="fa fa-cogs"></i>
+					</md-button>
 					<md-button class="plus md-icon-button md-button md-ink-ripple md-raised" aria-label="addList" ng-click="showAddListDialog($event)">
 						<i class="fa fa-plus-circle"></i>
+					</md-button>
+					<md-button class="sign-out md-icon-button md-button md-ink-ripple md-raised" ng-click="signUserOut();">
+						<i class="fa fa-sign-out"></i>
 					</md-button>
 				</div>
 			</md-sidenav>
@@ -104,3 +110,4 @@
 		</div>
 	</body>
 </html>
+

@@ -6,6 +6,7 @@ class WishList {
 		this._dateCreated = dateCreated;
 		this._dateModified = dateModified;
 		this._wishListItems = wishListItems;
+		// this._storageRef = firebase.database().ref('wishLists/' + this._name);
 	}
 
 	get name() {
@@ -47,5 +48,11 @@ class WishList {
 	set wishListItems(newWishListItems) {
 		this._wishListItems = newWishListItems;
 	}
-	
+
+	saveList() {
+		console.log("save");
+		var wishListsRef = firebase.database().ref('wishLists/');
+		console.log(wishListsRef);
+		wishListsRef.set(this);
+	}
 }

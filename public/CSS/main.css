@@ -39,6 +39,33 @@ h2 {
 	color: #3F8EC4;
 }
 
+.white-text {
+	color: white;
+}
+
+.blue-button-white-text {
+	background-color: #3F8EC4 !important;
+	color: white !important; 
+}
+
+.white-button-blue-text {
+	background-color: white !important;
+	color: #3F8EC4 !important;
+}
+
+#left-bg-panel {
+	height: 100%;
+	background-image: url("../Images/blueBG.png");
+}
+
+.login-control {
+	margin-top: 75%;
+}
+
+.login-text {
+	margin-top: 30%;
+}
+
 .listNameHeader {
 	color: #3F8EC4;
 	font-size: 45px;
@@ -128,4 +155,22 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	color: #3F8EC4 !important;
 	font-size: 65px !important;
 	line-height: 10px !important;
+}
+
+.sign-out {
+	height: 38px !important;
+	width: 38px !important;
+	text-align: center;
+	color: #990000 !important;
+	font-size: 35px !important;
+	line-height: 5px !important;
+}
+
+.settings {
+	height: 38px !important;
+	width: 38px !important;
+	text-align: center;
+	color: #006600 !important;
+	font-size: 35px !important;
+	line-height: 5px !important;
 }
